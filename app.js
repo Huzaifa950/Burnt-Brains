@@ -1,11 +1,14 @@
+const express = require("express");
+const studentsRoutes = require("./routes/students");
+const database = require("./config");
 
-const express = require('express')
-const app = express()
-const studentsRoute = require('./routes/students')
+const app = express();
 const PORT = 3500;
 
-app.use('/', studentsRoute)
+app.use(express.json());
 
-app.listen(PORT, ()=>{
-  console.log(`App Running on http://localhost:${PORT}`)
-})
+app.use("/", studentsRoutes);
+app.listen(PORT, () => {
+  database();
+  console.log(`App Running on http://localhost:${PORT}`);
+});
