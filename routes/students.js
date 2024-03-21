@@ -23,7 +23,7 @@ const router = express.Router();
 const StudentsController = require("../controller/students");
 
 router.get("/", StudentsController.GetAllStd); // Done
-router.post("/", StudentsController.InsertStd);    // Inserting only Ids and timeStamps
+router.post("/", StudentsController.InsertStd); // Inserting only Ids and timeStamps
 router.put("/:_id", StudentsController.UpdateStd); // Acknowledged: true but no updataion
 router.delete("/:name", StudentsController.DeleteStd); // Done
 router.get("/:name", StudentsController.GetStdByName); // Done
